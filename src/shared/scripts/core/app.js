@@ -5,7 +5,6 @@ import { initProfilePanel } from "./profile-panel.js";
 import { syncSearchForms } from "./search.js";
 import { loadStoreData } from "./store-data.js";
 import { loadTenantConfig } from "./tenant-loader.js";
-import { initPreviewThemeSwitcher } from "./preview-theme.js";
 import { applyTheme } from "./theme-loader.js";
 import { initUiMode } from "./ui-mode.js";
 import { initWhatsAppLinks } from "./whatsapp.js";
@@ -294,7 +293,6 @@ export function bootstrapPage(pageKey, setupPage = () => {}) {
 
     hydrateMediaFrames();
     initUiMode();
-    initPreviewThemeSwitcher();
     initWhatsAppLinks(tenant);
     syncSearchForms();
     bindFilterReset();

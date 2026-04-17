@@ -19,9 +19,23 @@
             <h1 class="text-4xl font-semibold" data-listing-title>Shop All</h1>
             <p class="text-muted max-w-2xl" data-listing-description>Browse our complete collection of premium gadgets and everyday electronics.</p>
           </div>
-          <form class="listing-search-row max-w-2xl" data-search-form>
-            <input class="input-shell" data-search-input name="q" placeholder="Search devices and accessories" aria-label="Search products" title="Search products">
-            <button class="primary-button" type="submit">Search</button>
+          <form class="listing-search-row max-w-2xl" data-search-form role="search">
+            <label class="listing-search-field" aria-label="Search products">
+              <svg class="listing-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+              </svg>
+              <input class="input-shell" data-search-input name="q" placeholder="Search devices and accessories" aria-label="Search products" title="Search products" enterkeyhint="search" autocomplete="off">
+              <button class="listing-search-clear" type="button" data-search-clear hidden aria-label="Clear search">Clear</button>
+            </label>
+            <button class="primary-button listing-search-submit" type="submit">
+              <svg class="listing-search-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+              </svg>
+              <span>Search</span>
+            </button>
+            <p class="listing-search-helper">Search devices, accessories, launches, specs, or product names.</p>
           </form>
         </div>
       </section>

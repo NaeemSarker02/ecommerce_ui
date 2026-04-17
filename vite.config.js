@@ -2,9 +2,14 @@ import { cpSync, existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
-function getThemePages() {
+function getHtmlInputs() {
   const themeRoot = resolve(process.cwd(), "src/themes");
   const inputs = {};
+  const rootIndex = resolve(process.cwd(), "index.html");
+
+  if (existsSync(rootIndex)) {
+    inputs.home = rootIndex;
+  }
 
   if (!existsSync(themeRoot)) {
     return inputs;
@@ -86,13 +91,13 @@ export default defineConfig({
   publicDir: "public",
   plugins: [copyRuntimeAssetsPlugin()],
   server: {
-    open: "/src/themes/universal-minimal/pages/index.html"
+    open: "/"
   },
   build: {
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: getThemePages()
+      input: getHtmlInputs()
     }
   }
 });

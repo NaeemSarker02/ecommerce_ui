@@ -1,30 +1,54 @@
 <div class="shell-panel surface-border border-b px-4 py-4 lg:hidden" data-mobile-menu hidden>
-  <div class="page-container text-muted flex flex-col gap-4 px-0 text-sm">
-    <div class="grid gap-2 sm:grid-cols-2">
-      <a href="./search.html" class="action-chip">Search</a>
-      <button type="button" class="action-chip" data-profile-panel-open aria-label="Open profile and contact panel">Profile</button>
-      <button type="button" class="action-chip justify-between" data-ui-mode-toggle aria-label="Toggle light and dark mode">
-        <span>Mode</span>
+  <div class="page-container mobile-menu-panel text-muted">
+    <div class="mobile-menu-action-grid">
+      <a href="./search.html" class="action-chip gap-2">
+        <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <span>Search</span>
+      </a>
+      <button type="button" class="action-chip gap-2" data-profile-panel-open aria-label="Open profile and contact panel">
+        <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 20a6 6 0 0 0-12 0"></path>
+          <circle cx="12" cy="10" r="4"></circle>
+        </svg>
+        <span>Profile</span>
+      </button>
+      <button type="button" class="action-chip justify-between gap-2" data-ui-mode-toggle aria-label="Toggle light and dark mode">
+        <span class="inline-flex items-center gap-2">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v2.25"></path>
+            <path d="M12 18.75V21"></path>
+            <path d="M4.97 4.97l1.59 1.59"></path>
+            <path d="M17.44 17.44l1.59 1.59"></path>
+            <path d="M3 12h2.25"></path>
+            <path d="M18.75 12H21"></path>
+            <path d="M4.97 19.03l1.59-1.59"></path>
+            <path d="M17.44 6.56l1.59-1.59"></path>
+            <circle cx="12" cy="12" r="3.25"></circle>
+          </svg>
+          <span>Theme</span>
+        </span>
         <span data-ui-mode-label>Light</span>
       </button>
-      <a class="action-chip-brand" data-whatsapp-link href="#">WhatsApp</a>
+      <a class="action-chip-brand gap-2" data-whatsapp-link href="#">
+        <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 12a8 8 0 0 1-11.76 7.05L4 20l.95-4.24A8 8 0 1 1 20 12Z"></path>
+          <path d="M8.7 9.9c.2-.45.42-.46.62-.46h.53c.17 0 .4-.06.61.44.21.5.72 1.74.79 1.86.06.12.1.27.02.43-.08.16-.12.27-.24.41-.12.14-.25.31-.36.42-.12.12-.24.25-.1.5.14.25.62 1.02 1.33 1.65.91.81 1.67 1.06 1.92 1.18.25.12.4.1.54-.06.15-.16.63-.73.8-.98.17-.25.34-.21.58-.12.24.08 1.53.72 1.8.85.27.12.45.19.52.29.06.1.06.6-.14 1.18-.2.58-1.16 1.14-1.6 1.18-.44.04-.99.19-3.36-.74-2.87-1.12-4.69-3.97-4.83-4.17-.14-.21-1.16-1.55-1.16-2.96 0-1.41.73-2.1 1-2.39Z"></path>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
     </div>
 
     <div class="divider-line"></div>
 
-    <div class="space-y-2">
-      <p class="text-muted text-xs font-semibold uppercase tracking-[0.18em]">Preview Theme</p>
-      <select class="select-shell w-full" data-theme-switcher aria-label="Switch preview theme"></select>
-    </div>
-
-    <div class="divider-line"></div>
-
-    <div class="flex flex-col gap-3">
-      <a href="./index.html">Home</a>
-      <a href="./search.html">Shop All</a>
-      <a href="./category.html">Categories</a>
-      <a href="./product.html">Featured Product</a>
-      <a href="./cart.html">Cart</a>
+    <div class="mobile-menu-link-stack">
+      <a class="mobile-menu-link" href="./index.html">Home</a>
+      <a class="mobile-menu-link" href="./search.html">Shop All</a>
+      <a class="mobile-menu-link" href="./category.html">Categories</a>
+      <a class="mobile-menu-link" href="./product.html">Product</a>
+      <a class="mobile-menu-link" href="./cart.html">Cart</a>
     </div>
   </div>
 </div>

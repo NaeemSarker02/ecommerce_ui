@@ -1,6 +1,6 @@
 <header class="surface-border border-b">
   <div class="top-strip">
-    <div class="page-container flex flex-wrap items-center justify-between gap-2 py-2 text-xs font-semibold tracking-[0.05em]">
+    <div class="page-container top-strip-inner">
       <p>
         Order via WhatsApp:
         <a class="top-strip-link" data-whatsapp-link href="#"><span data-whatsapp-number>+8801303997358</span></a>
@@ -27,8 +27,8 @@
   </div>
 
   <div class="shell-panel">
-    <div class="page-container flex items-center gap-4 py-4">
-      <a href="./index.html" class="text-body flex items-center gap-3 text-sm font-semibold">
+    <div class="page-container header-main-row">
+      <a href="./index.html" class="text-body header-brand-link">
         <span class="shell-logo-frame">
           <img class="shell-logo-image" data-store-logo src="" alt="Store logo" hidden>
           <span data-store-logo-fallback>ZS</span>
@@ -42,32 +42,60 @@
         </span>
       </a>
 
-      <nav class="hidden items-center gap-6 text-sm lg:flex">
+      <nav class="header-main-nav hidden lg:flex">
         <a href="./index.html" class="nav-link">Home</a>
         <a href="./search.html" class="nav-link">Shop All</a>
         <a href="./category.html" class="nav-link">Categories</a>
-        <a href="./product.html" class="nav-link">Featured Product</a>
+        <a href="./product.html" class="nav-link">Product</a>
       </nav>
 
-      <div class="ml-auto flex items-center gap-2 xl:gap-3">
-        <a href="./search.html" class="action-chip hidden md:inline-flex">Search</a>
-        <button type="button" class="action-chip hidden sm:inline-flex" data-profile-panel-open aria-label="Open profile and contact panel">
-          Profile
+      <div class="header-action-row ml-auto">
+        <a href="./search.html" class="header-icon-button hidden md:inline-flex" aria-label="Search products" title="Search products">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+        </a>
+        <button type="button" class="header-icon-button hidden sm:inline-flex" data-ui-mode-toggle aria-label="Toggle light and dark mode" title="Toggle light and dark mode">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v2.25"></path>
+            <path d="M12 18.75V21"></path>
+            <path d="M4.97 4.97l1.59 1.59"></path>
+            <path d="M17.44 17.44l1.59 1.59"></path>
+            <path d="M3 12h2.25"></path>
+            <path d="M18.75 12H21"></path>
+            <path d="M4.97 19.03l1.59-1.59"></path>
+            <path d="M17.44 6.56l1.59-1.59"></path>
+            <circle cx="12" cy="12" r="3.25"></circle>
+          </svg>
+          <span class="visually-hidden" data-ui-mode-label>Light</span>
         </button>
-        <button type="button" class="action-chip mode-chip hidden sm:inline-flex" data-ui-mode-toggle aria-label="Toggle light and dark mode">
-          <span class="mode-indicator">Mode</span>
-          <span class="mode-value ml-2" data-ui-mode-label>Light</span>
+        <button type="button" class="header-icon-button hidden sm:inline-flex" data-profile-panel-open aria-label="Open profile and contact panel" title="Open profile and contact panel">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 20a6 6 0 0 0-12 0"></path>
+            <circle cx="12" cy="10" r="4"></circle>
+          </svg>
         </button>
-        <a class="action-chip-brand hidden lg:inline-flex" data-whatsapp-link href="#">WhatsApp</a>
-        <button type="button" class="action-chip" data-mini-cart-open aria-label="Open mini cart">
-          Cart <span class="ml-2" data-cart-count>0</span>
+        <button type="button" class="header-icon-button header-cart-button" data-mini-cart-open aria-label="Open mini cart" title="Open mini cart">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="20" r="1.4"></circle>
+            <circle cx="18" cy="20" r="1.4"></circle>
+            <path d="M3 4h2l2.7 11.1a1 1 0 0 0 1 .76h8.9a1 1 0 0 0 .97-.75L21 7H7.2"></path>
+          </svg>
+          <span class="header-cart-count" data-cart-count>0</span>
         </button>
-        <div class="hidden items-center gap-2 2xl:flex">
-          <label class="text-muted text-xs font-semibold uppercase tracking-[0.18em]" for="theme-switcher-desktop">Theme</label>
-          <select id="theme-switcher-desktop" class="select-shell text-sm" data-theme-switcher aria-label="Switch preview theme"></select>
-        </div>
-        <button type="button" class="action-chip-brand inline-flex lg:hidden" data-mobile-menu-toggle>
-          Menu
+        <a class="header-icon-button header-icon-button-brand hidden md:inline-flex" data-whatsapp-link href="#" aria-label="Open WhatsApp" title="Open WhatsApp">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 12a8 8 0 0 1-11.76 7.05L4 20l.95-4.24A8 8 0 1 1 20 12Z"></path>
+            <path d="M8.7 9.9c.2-.45.42-.46.62-.46h.53c.17 0 .4-.06.61.44.21.5.72 1.74.79 1.86.06.12.1.27.02.43-.08.16-.12.27-.24.41-.12.14-.25.31-.36.42-.12.12-.24.25-.1.5.14.25.62 1.02 1.33 1.65.91.81 1.67 1.06 1.92 1.18.25.12.4.1.54-.06.15-.16.63-.73.8-.98.17-.25.34-.21.58-.12.24.08 1.53.72 1.8.85.27.12.45.19.52.29.06.1.06.6-.14 1.18-.2.58-1.16 1.14-1.6 1.18-.44.04-.99.19-3.36-.74-2.87-1.12-4.69-3.97-4.83-4.17-.14-.21-1.16-1.55-1.16-2.96 0-1.41.73-2.1 1-2.39Z"></path>
+          </svg>
+        </a>
+        <button type="button" class="header-icon-button inline-flex lg:hidden" data-mobile-menu-toggle aria-label="Open menu" title="Open menu">
+          <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
         </button>
       </div>
     </div>
@@ -168,6 +196,7 @@
       <div class="mt-4 flex flex-wrap gap-3">
         <button type="button" class="primary-button" data-profile-save>Save Details</button>
         <a class="secondary-button" href="./cart.html">Open Cart</a>
+        <a class="secondary-button" href="/">Template Portal</a>
       </div>
       <p class="validation-note mt-4" data-profile-status>Save customer details once and reuse them across checkout.</p>
     </div>
@@ -196,6 +225,7 @@
       <div class="profile-panel-actions mt-4">
         <a class="primary-button" data-whatsapp-link href="#">Chat on WhatsApp</a>
         <a class="secondary-button" href="./cart.html">Checkout</a>
+        <a class="secondary-button" href="/">Back to Templates</a>
       </div>
     </div>
   </div>

@@ -9,6 +9,7 @@ import { setText } from "../utils/dom.js";
 import { loadPageData } from "./shared-page-data.js";
 
 const NEWSLETTER_KEY = "storefront-newsletter-signups";
+let revealObserver = null;
 
 function formatCollectionLabel(value) {
 	return String(value || "")
@@ -24,6 +25,121 @@ function setOptionalText(selector, value) {
 	}
 
 	setText(selector, value);
+}
+
+function markRevealVisible(node) {
+	node.classList.add("is-visible");
+}
+
+function observeRevealNodes(root = document) {
+	const nodes = [];
+
+	if (root?.matches?.("[data-reveal]")) {
+		nodes.push(root);
+	}
+
+	if (root?.querySelectorAll) {
+		nodes.push(...root.querySelectorAll("[data-reveal]"));
+	}
+
+	if (!nodes.length) {
+		return;
+	}
+
+	const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+	nodes.forEach((node) => {
+		if (node.dataset.revealDelay) {
+			node.style.setProperty("--reveal-delay", `${node.dataset.revealDelay}ms`);
+		}
+	});
+
+	if (reducedMotion || !("IntersectionObserver" in window)) {
+		nodes.forEach(markRevealVisible);
+		return;
+	}
+
+	if (!revealObserver) {
+		revealObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) {
+						return;
+					}
+
+					markRevealVisible(entry.target);
+					revealObserver?.unobserve(entry.target);
+				});
+			},
+			{
+				threshold: 0.16,
+				rootMargin: "0px 0px -10% 0px"
+			}
+		);
+	}
+
+	nodes.forEach((node) => {
+		if (node.dataset.revealObserved === "true") {
+			return;
+		}
+
+		node.dataset.revealObserved = "true";
+		revealObserver.observe(node);
+	});
+}
+
+function applyRevealStagger(root, selector, startDelay = 0, step = 80, effect = "rise") {
+	if (!root?.querySelectorAll) {
+		return;
+	}
+
+	root.querySelectorAll(selector).forEach((node, index) => {
+		node.dataset.reveal = effect;
+		node.dataset.revealDelay = String(startDelay + index * step);
+	});
+
+	observeRevealNodes(root);
+}
+
+function refreshHeroMotion(heroShell) {
+	if (!heroShell) {
+		return;
+	}
+
+	heroShell.classList.remove("is-refreshing");
+	void heroShell.offsetWidth;
+	heroShell.classList.add("is-refreshing");
+	window.setTimeout(() => {
+		heroShell.classList.remove("is-refreshing");
+	}, 520);
+}
+
+function getHomeFeatureOptions(themeKey, tenant) {
+	switch (themeKey) {
+		case "tech-electronics":
+			return {
+				showDescription: false,
+				compact: true,
+				buttonLabel: "Add to Cart"
+			};
+		case "fashion-lifestyle":
+			return {
+				showDescription: true,
+				aspectClass: "aspect-[4/5]",
+				buttonLabel: "Add to Bag"
+			};
+		case "daily-essentials":
+			return {
+				showDescription: false,
+				compact: true,
+				buttonLabel: "Add to Basket"
+			};
+		default:
+			return {
+				showDescription: true,
+				buttonLabel: tenant.featureToggles?.showQuickAdd === false ? "View Product" : "Add to Cart"
+			};
+	}
 }
 
 function applyHomeSectionVisibility(homepageConfiguration = {}) {
@@ -149,6 +265,7 @@ bootstrapPage("home", async ({ tenant }) => {
 	const matchedPrimaryCategory = categories.find((category) => category.slug === tenant.businessType || category.categoryId === tenant.businessType) || null;
 	const primaryCategory = matchedPrimaryCategory || findCategory(categories, tenant.businessType);
 	const featuredProducts = matchedPrimaryCategory ? getProductsByCategory(products, matchedPrimaryCategory.categoryId) : products;
+	const themeKey = document.body.dataset.theme || tenant.themeKey || "universal-minimal";
 	const categoryCounts = getCategoryProductCounts(products);
 	const heroMedia = document.querySelector("[data-home-media]");
 	const heroShell = document.querySelector(".home-hero-shell");
@@ -157,6 +274,7 @@ bootstrapPage("home", async ({ tenant }) => {
 	const heroNav = document.querySelector("[data-home-slider-nav]");
 	const heroDots = document.querySelector("[data-home-slider-dots]");
 	const derivedFeaturedKicker = formatCollectionLabel(homepageConfiguration.featuredCollection);
+	const featureOptions = getHomeFeatureOptions(themeKey, tenant);
 	let activeBannerIndex = 0;
 	let sliderTimer = null;
 
@@ -197,6 +315,7 @@ bootstrapPage("home", async ({ tenant }) => {
 		setHref("[data-home-primary-link]", getBannerCtaHref(banner, primaryCategory));
 		renderHeroDots(heroDots, heroBanners, activeBannerIndex);
 		heroShell?.setAttribute("data-active-banner", banner.bannerId || String(activeBannerIndex));
+		refreshHeroMotion(heroShell);
 	};
 
 	const stopHeroAutoRotate = () => {
@@ -275,16 +394,21 @@ bootstrapPage("home", async ({ tenant }) => {
 
 	const categoryGrid = document.querySelector("[data-categories-grid]");
 	const featuredGrid = document.querySelector("[data-featured-products-grid]");
+	observeRevealNodes(document);
+	applyRevealStagger(document, "[data-home-section=\"trust\"] .trust-card", 110, 70);
+	applyRevealStagger(document, ".support-contact-card", 140, 90);
 	const renderFeaturedProducts = () => {
 		if (!featuredGrid) {
 			return;
 		}
 
 		renderProductCards(featuredGrid, (featuredProducts.length ? featuredProducts : products).slice(0, 4), categoryMap, {
-			showDescription: true,
-			showQuickAdd: tenant.featureToggles?.showQuickAdd !== false,
+			...featureOptions,
+			showQuickAdd: tenant.featureToggles?.showQuickAdd !== false && featureOptions.buttonLabel !== "View Product",
 			tenant
 		});
+
+		applyRevealStagger(featuredGrid, ".product-card", 120, 90);
 	};
 
 	if (categoryGrid) {
@@ -292,6 +416,8 @@ bootstrapPage("home", async ({ tenant }) => {
 			showCount: true,
 			categoryCounts
 		});
+
+		applyRevealStagger(categoryGrid, ".category-card", 80, 80);
 	}
 
 	renderFeaturedProducts();

@@ -116,7 +116,8 @@ function captureBasePalette(root) {
   basePalette = {
     brand: readCssVariable(root, "--color-brand") || "#0f172a",
     brandStrong: readCssVariable(root, "--color-brand-strong") || "#020617",
-    accent: readCssVariable(root, "--color-accent") || "#0ea5e9"
+    accent: readCssVariable(root, "--color-accent") || "#0ea5e9",
+    shadowCard: readCssVariable(root, "--shadow-card") || "0 20px 45px rgba(15, 23, 42, 0.08)"
   };
 
   return basePalette;
@@ -130,17 +131,18 @@ function buildPalette(mode, root) {
 
   if (mode === "dark") {
     return {
-      "--color-surface": "rgb(8 15 28)",
+      "--color-surface": "rgb(8 13 24)",
       "--color-surface-elevated": "rgb(15 23 42)",
-      "--color-text": "rgb(231 238 248)",
-      "--color-text-muted": "rgb(148 163 184)",
-      "--color-border": "rgb(34 49 74)",
-      "--color-footer-bg": "rgb(5 11 20)",
-      "--color-footer-text": "rgb(239 245 251)",
-      "--color-footer-muted": "rgb(174 191 212)",
+      "--color-text": "rgb(234 241 251)",
+      "--color-text-muted": "rgb(154 169 190)",
+      "--color-border": "rgb(48 62 86)",
+      "--color-footer-bg": "rgb(4 9 18)",
+      "--color-footer-text": "rgb(242 247 252)",
+      "--color-footer-muted": "rgb(178 193 214)",
       "--color-brand": toRgbString(ensureReadableBrand(mix(brand, accent, 0.18), "dark")),
       "--color-brand-strong": toRgbString(ensureReadableBrand(mix(brandStrong, brand, 0.18), "dark")),
-      "--color-accent": toRgbString(ensureReadableBrand(accent, "dark"))
+      "--color-accent": toRgbString(ensureReadableBrand(accent, "dark")),
+      "--shadow-card": "0 28px 62px rgba(2, 6, 23, 0.42)"
     };
   }
 
@@ -155,13 +157,20 @@ function buildPalette(mode, root) {
     "--color-footer-muted": "rgb(203 213 225)",
     "--color-brand": toRgbString(ensureReadableBrand(brand, "light")),
     "--color-brand-strong": toRgbString(ensureReadableBrand(brandStrong, "light")),
-    "--color-accent": toRgbString(accent)
+    "--color-accent": toRgbString(accent),
+    "--shadow-card": base.shadowCard
   };
 }
 
 function updateToggleLabels(mode) {
   document.querySelectorAll("[data-ui-mode-label]").forEach((node) => {
     node.textContent = mode === "dark" ? "Dark" : "Light";
+  });
+
+  document.querySelectorAll("[data-ui-mode-toggle]").forEach((node) => {
+    const nextMode = mode === "dark" ? "light" : "dark";
+    node.setAttribute("title", `Switch to ${nextMode} mode`);
+    node.setAttribute("aria-label", `Switch to ${nextMode} mode`);
   });
 }
 
@@ -177,7 +186,8 @@ function clearUiOverrides(root) {
     "--color-footer-muted",
     "--color-brand",
     "--color-brand-strong",
-    "--color-accent"
+    "--color-accent",
+    "--shadow-card"
   ].forEach((key) => {
     root.style.removeProperty(key);
   });

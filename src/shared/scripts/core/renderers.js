@@ -173,14 +173,14 @@ export function renderCategoryCards(container, categories, options = {}) {
             })}
             <div class="category-card-copy">
               <div class="category-card-meta">
-                <p class="text-muted text-xs uppercase tracking-[0.2em]">${escapeHtml(category.icon || "category")}</p>
+                <p class="category-card-kicker">${escapeHtml(category.icon || "category")}</p>
                 ${showCount ? `<span class="category-count">${escapeHtml(String(categoryCounts.get(category.categoryId) || 0))} ${categoryCounts.get(category.categoryId) === 1 ? "item" : "items"}</span>` : ""}
               </div>
               <div class="space-y-2">
-                <${titleTag} class="text-lg font-semibold text-body">${escapeHtml(category.name)}</${titleTag}>
-                <p class="text-muted text-sm">${escapeHtml(category.description || "Browse products in this category.")}</p>
+                <${titleTag} class="category-card-title">${escapeHtml(category.name)}</${titleTag}>
+                <p class="category-card-description">${escapeHtml(category.description || "Browse products in this category.")}</p>
               </div>
-              <span class="section-link">Browse category</span>
+              <span class="category-card-cta">Browse category</span>
             </div>
           </a>
         </article>
@@ -203,7 +203,7 @@ export function renderProductCards(container, products, categoryMap, options = {
   } = options;
 
   if (!products.length) {
-    container.innerHTML = `<div class="card-surface p-8 text-sm text-muted">${escapeHtml(emptyMessage)}</div>`;
+    container.innerHTML = `<div class="card-surface listing-empty-state">${escapeHtml(emptyMessage)}</div>`;
     return;
   }
 
@@ -235,10 +235,10 @@ export function renderProductCards(container, products, categoryMap, options = {
           </a>
           <div class="product-card-body ${compact ? "" : "md:p-5"}">
             <div class="product-card-meta">
-              <p class="text-muted text-xs uppercase tracking-[0.2em]">${escapeHtml(categoryName)}</p>
+              <p class="product-card-eyebrow">${escapeHtml(categoryName)}</p>
               ${badge ? `<span class="pill-badge">${escapeHtml(badge)}</span>` : ""}
             </div>
-            <div class="space-y-2">
+            <div class="space-y-2.5">
               <a class="block" href="${productHref}">
                 <h3 class="product-card-title">${escapeHtml(product.name)}</h3>
               </a>
@@ -256,7 +256,7 @@ export function renderProductCards(container, products, categoryMap, options = {
               </div>
               <div class="product-card-actions">
                 <a class="product-card-link" href="${productHref}">View details</a>
-                ${showQuickAdd ? `<button class="primary-button shrink-0" type="button" data-quick-add="${encodeURIComponent(product.slug)}" data-quick-add-state="${quickAddState.blocked ? "blocked" : "ready"}" data-quick-add-target="${escapeAttribute(quickAddState.target)}">${escapeHtml(quickAddState.label)}</button>` : ""}
+                ${showQuickAdd ? `<button class="primary-button product-card-quick-action shrink-0" type="button" data-quick-add="${encodeURIComponent(product.slug)}" data-quick-add-state="${quickAddState.blocked ? "blocked" : "ready"}" data-quick-add-target="${escapeAttribute(quickAddState.target)}">${escapeHtml(quickAddState.label)}</button>` : ""}
               </div>
             </div>
           </div>
