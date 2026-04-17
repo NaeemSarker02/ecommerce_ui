@@ -4,15 +4,15 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "latest",
-    "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "vite": "latest"
+    "@tailwindcss/postcss": "4.2.2",
+    "autoprefixer": "10.5.0",
+    "postcss": "8.5.10",
+    "tailwindcss": "4.2.2",
+    "vite": "8.0.8"
   }
 }
