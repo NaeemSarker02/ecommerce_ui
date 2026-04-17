@@ -1,0 +1,16 @@
+:root[data-theme="tech-electronics"] {
+  --color-brand: #2563eb;
+  --color-brand-strong: #1d4ed8;
+  --color-accent: #22d3ee;
+  --color-surface: #020617;
+  --color-surface-elevated: #0f172a;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-border: #1e293b;
+  --color-footer-bg: #020617;
+  --color-footer-text: #e2e8f0;
+  --color-footer-muted: #94a3b8;
+  --radius-card: 1.5rem;
+  --shadow-card: 0 24px 48px rgba(2, 6, 23, 0.32);
+  --section-gap: 4.5rem;
+}

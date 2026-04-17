@@ -1,0 +1,16 @@
+:root[data-theme="daily-essentials"] {
+  --color-brand: #15803d;
+  --color-brand-strong: #166534;
+  --color-accent: #fb923c;
+  --color-surface: #f7fee7;
+  --color-surface-elevated: #ffffff;
+  --color-text: #14532d;
+  --color-text-muted: #4d7c0f;
+  --color-border: #d9f99d;
+  --color-footer-bg: #14532d;
+  --color-footer-text: #f7fee7;
+  --color-footer-muted: #d9f99d;
+  --radius-card: 1.5rem;
+  --shadow-card: 0 20px 40px rgba(20, 83, 45, 0.08);
+  --section-gap: 4.5rem;
+}

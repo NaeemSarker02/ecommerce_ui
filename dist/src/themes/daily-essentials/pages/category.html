@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Essentials Category</title>
+    <script type="module" crossorigin src="/assets/shared-page-data-Xdzde9RX.js"></script>
+    <script type="module" crossorigin src="/assets/category-Lw2sxgzW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/shared-page-data-HmdWZbGG.css">
+    <link rel="stylesheet" crossorigin href="/assets/theme-DQhl-rmb.css">
+  </head>
+  <body data-theme="daily-essentials" data-tenant-config="/src/data/tenants/demo-essentials.json">
+    <div data-partial="/src/shared/partials/header.html"></div>
+    <div data-partial="/src/shared/partials/mobile-menu.html"></div>
+    <div data-partial="/src/shared/partials/breadcrumb.html"></div>
+    <main class="section-shell">
+      <section class="page-container theme-page-intro">
+        <div class="listing-intro-shell">
+          <div class="listing-intro-copy">
+            <p class="section-kicker">Category</p>
+            <h1 class="text-4xl font-semibold" data-category-title>Baby Care Essentials</h1>
+            <p class="text-muted max-w-2xl" data-category-description>Browse products in this category.</p>
+          </div>
+          <div class="listing-chip-row" data-category-links></div>
+        </div>
+      </section>
+      <section class="page-container listing-stack">
+        <div class="listing-panel">
+          <div class="listing-toolbar text-sm">
+            <p class="listing-toolbar-count" data-results-count>Showing 0 products</p>
+            <div class="listing-sort-row">
+              <span class="listing-sort-label">Sort by</span>
+              <select class="select-shell" data-sort-select aria-label="Sort products" title="Sort products">
+                <option value="default">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name">Name</option>
+              </select>
+            </div>
+          </div>
+          <div class="product-grid-default" data-product-grid></div>
+        </div>
+      </section>
+    </main>
+    <div data-partial="/src/shared/partials/whatsapp-cta.html"></div>
+    <div data-partial="/src/shared/partials/footer.html"></div>
+  </body>
+</html>

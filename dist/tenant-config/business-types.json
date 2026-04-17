@@ -1,0 +1,22 @@
+[
+  {
+    "key": "general-retail",
+    "label": "General Retail",
+    "defaultTheme": "universal-minimal"
+  },
+  {
+    "key": "electronics",
+    "label": "Electronics",
+    "defaultTheme": "tech-electronics"
+  },
+  {
+    "key": "fashion",
+    "label": "Fashion",
+    "defaultTheme": "fashion-lifestyle"
+  },
+  {
+    "key": "daily-essentials",
+    "label": "Daily Essentials",
+    "defaultTheme": "daily-essentials"
+  }
+]

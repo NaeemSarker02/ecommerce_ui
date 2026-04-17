@@ -1,0 +1,42 @@
+[
+  {
+    "categoryId": "electronics",
+    "slug": "electronics",
+    "name": "Electronics",
+    "description": "Devices, accessories, and premium gadgets.",
+    "imageUrl": "/images/category-electronics.svg",
+    "icon": "cpu",
+    "parentCategoryId": null,
+    "displayOrder": 1
+  },
+  {
+    "categoryId": "running",
+    "slug": "running",
+    "name": "Running",
+    "description": "Performance footwear and sports gear.",
+    "imageUrl": "/images/category-running.svg",
+    "icon": "activity",
+    "parentCategoryId": null,
+    "displayOrder": 2
+  },
+  {
+    "categoryId": "apparels",
+    "slug": "apparels",
+    "name": "Apparels",
+    "description": "Lifestyle and fashion products.",
+    "imageUrl": "/images/category-apparel.svg",
+    "icon": "shirt",
+    "parentCategoryId": null,
+    "displayOrder": 3
+  },
+  {
+    "categoryId": "baby-care",
+    "slug": "baby-care",
+    "name": "Baby Care",
+    "description": "Daily essentials, baby care, and hygiene.",
+    "imageUrl": "/images/category-care.svg",
+    "icon": "heart-handshake",
+    "parentCategoryId": null,
+    "displayOrder": 4
+  }
+]

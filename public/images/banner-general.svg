@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Universal storefront banner</title>
+  <desc id="desc">Abstract neutral banner for the universal storefront preview.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="48" fill="url(#bg)"/>
+  <circle cx="975" cy="180" r="140" fill="#bfdbfe" opacity="0.8"/>
+  <circle cx="1090" cy="520" r="190" fill="#e2e8f0" opacity="0.9"/>
+  <rect x="88" y="110" width="448" height="500" rx="40" fill="#ffffff" opacity="0.92"/>
+  <text x="136" y="250" fill="#111827" font-size="76" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Universal</text>
+  <text x="136" y="334" fill="#0f172a" font-size="76" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Storefront</text>
+  <text x="136" y="404" fill="#475569" font-size="30" font-family="Segoe UI, Arial, sans-serif">Shared catalog engine, theme-ready presentation,</text>
+  <text x="136" y="446" fill="#475569" font-size="30" font-family="Segoe UI, Arial, sans-serif">and a neutral launch experience.</text>
+  <rect x="136" y="496" width="216" height="56" rx="28" fill="#111827"/>
+  <text x="186" y="532" fill="#ffffff" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Browse Store</text>
+</svg>

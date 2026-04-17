@@ -1,0 +1,109 @@
+[
+  {
+    "bannerId": "hero-general",
+    "title": "Big Sale!",
+    "subtitle": "Get 50% off on all items this weekend.",
+    "ctaLabel": "Shop Now",
+    "ctaPage": "search",
+    "ctaQuery": "featured",
+    "themeKeys": ["universal-minimal", "all"],
+    "businessTypes": ["general-retail", "mixed-inventory", "white-label"],
+    "priority": 2,
+    "imageUrl": "/images/banner-general.svg"
+  },
+  {
+    "bannerId": "hero-general-catalog",
+    "title": "Clean Merchandising, Faster Paths",
+    "subtitle": "Keep the storefront compact, scan-friendly, and ready for mixed-inventory shoppers who want to move quickly.",
+    "ctaLabel": "Browse Catalog",
+    "ctaPage": "search",
+    "themeKeys": ["universal-minimal", "all"],
+    "businessTypes": ["general-retail", "mixed-inventory", "white-label"],
+    "priority": 4,
+    "imageUrl": "/images/banner-general.svg"
+  },
+  {
+    "bannerId": "hero-tech",
+    "title": "Upgrade Your Setup",
+    "subtitle": "New arrivals for tech-driven stores.",
+    "ctaLabel": "Browse Gadgets",
+    "ctaPage": "category",
+    "ctaCategorySlug": "electronics",
+    "themeKeys": ["tech-electronics"],
+    "businessTypes": ["electronics", "gadgets", "accessories"],
+    "priority": 10,
+    "imageUrl": "/images/banner-tech.svg"
+  },
+  {
+    "bannerId": "hero-tech-launch-window",
+    "title": "Launch Week, Better Conversion",
+    "subtitle": "Highlight premium devices, quicker category jumps, and a sharper hero rhythm for spec-first storefronts.",
+    "ctaLabel": "Compare Devices",
+    "ctaPage": "category",
+    "ctaCategorySlug": "electronics",
+    "themeKeys": ["tech-electronics"],
+    "businessTypes": ["electronics", "gadgets", "accessories"],
+    "priority": 7,
+    "imageUrl": "/images/banner-tech.svg"
+  },
+  {
+    "bannerId": "hero-fashion",
+    "title": "Curated Seasonal Edit",
+    "subtitle": "Story-first layouts for lifestyle brands.",
+    "ctaLabel": "Explore Collection",
+    "ctaPage": "search",
+    "ctaQuery": "edit",
+    "themeKeys": ["fashion-lifestyle"],
+    "businessTypes": ["fashion", "beauty", "lifestyle"],
+    "priority": 10,
+    "imageUrl": "/images/banner-fashion.svg"
+  },
+  {
+    "bannerId": "hero-fashion-capsule",
+    "title": "Capsule Merchandising, Simplified",
+    "subtitle": "Use a slimmer editorial banner to push curated collections without crowding the page.",
+    "ctaLabel": "Browse Apparels",
+    "ctaPage": "category",
+    "ctaCategorySlug": "apparels",
+    "themeKeys": ["fashion-lifestyle"],
+    "businessTypes": ["fashion", "beauty", "lifestyle"],
+    "priority": 7,
+    "imageUrl": "/images/banner-fashion.svg"
+  },
+  {
+    "bannerId": "hero-essentials",
+    "title": "Fast-Buy Layouts For Everyday Orders",
+    "subtitle": "Promote daily deals, trust cues, and quick replenishment paths in one reusable theme.",
+    "ctaLabel": "View Essentials",
+    "ctaPage": "category",
+    "ctaCategorySlug": "baby-care",
+    "themeKeys": ["daily-essentials"],
+    "businessTypes": ["daily-essentials", "grocery", "pharmacy", "baby-care", "wellness"],
+    "priority": 10,
+    "imageUrl": "/images/banner-essentials.svg"
+  },
+  {
+    "bannerId": "hero-essentials-refill",
+    "title": "Refill Staples In Fewer Clicks",
+    "subtitle": "Keep repeat-order essentials close to the top with tighter copy, faster CTAs, and clearer everyday shopping cues.",
+    "ctaLabel": "Shop Baby Care",
+    "ctaPage": "category",
+    "ctaCategorySlug": "baby-care",
+    "themeKeys": ["daily-essentials"],
+    "businessTypes": ["daily-essentials", "grocery", "pharmacy", "baby-care", "wellness"],
+    "priority": 7,
+    "imageUrl": "/images/banner-essentials.svg"
+  },
+  {
+    "bannerId": "hero-weekly-picks",
+    "title": "Fresh Picks This Week",
+    "subtitle": "A slimmer promotional banner built for fast category discovery, cleaner product browsing, and stronger CTA focus.",
+    "ctaLabel": "View This Week's Picks",
+    "ctaPage": "search",
+    "ctaQuery": "latest",
+    "themeKeys": ["all"],
+    "businessTypes": ["general-retail", "electronics", "fashion", "daily-essentials", "mixed-inventory", "white-label"],
+    "priority": 6,
+    "imageUrl": "/images/banner-general.svg"
+  }
+]

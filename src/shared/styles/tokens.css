@@ -1,0 +1,18 @@
+:root {
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #0f172a;
+  --color-brand-strong: #020617;
+  --color-accent: #0ea5e9;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-footer-bg: #0f172a;
+  --color-footer-text: #f8fafc;
+  --color-footer-muted: #cbd5e1;
+  --radius-card: 1.5rem;
+  --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --section-gap: 5rem;
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Essentials Product</title>
+    <link rel="stylesheet" href="/src/shared/styles/app.css">
+    <link rel="stylesheet" href="/src/themes/daily-essentials/tokens.css">
+    <link rel="stylesheet" href="/src/themes/daily-essentials/theme.css">
+  </head>
+  <body data-theme="daily-essentials" data-tenant-config="/src/data/tenants/demo-essentials.json" data-whatsapp-message="Hi, I want to order this essentials product.">
+    <div data-partial="/src/shared/partials/header.html"></div>
+    <div data-partial="/src/shared/partials/mobile-menu.html"></div>
+    <div data-partial="/src/shared/partials/breadcrumb.html"></div>
+    <main class="section-shell">
+      <section class="page-container additional-links">
+        <p class="section-kicker">Additional Links</p>
+        <div class="additional-links-list">
+          <a class="additional-link" href="./index.html">Home</a>
+          <a class="additional-link" data-additional-category-link href="./category.html">Category</a>
+        </div>
+      </section>
+      <section class="page-container theme-detail-shell product-detail-shell">
+        <div class="theme-gallery product-gallery-shell">
+          <div class="theme-gallery-main" data-product-gallery-main></div>
+          <div class="theme-thumbnail-row" data-product-gallery-thumbnails></div>
+        </div>
+        <div class="product-detail-stack">
+          <div class="product-detail-intro">
+            <p class="section-kicker" data-product-kicker>Quick Order Product Page</p>
+            <h1 class="text-4xl font-semibold" data-product-title>Savlon Liquid 1L</h1>
+            <p class="text-muted text-sm" data-product-description>A fast-buy detail layout with clear pricing, unit label, trust, and support actions.</p>
+          </div>
+          <div class="card-surface product-detail-purchase">
+            <div class="product-price-row">
+              <div class="product-price-stack">
+                <div class="product-price-line">
+                  <p class="text-3xl font-semibold" data-product-price>BDT 288</p>
+                  <p class="price-compare" data-product-compare-price hidden>BDT 320</p>
+                </div>
+                <p class="product-unit-label" data-product-unit>Per Bottle</p>
+              </div>
+              <span class="pill-badge" data-product-stock>Low Stock</span>
+            </div>
+            <div class="product-meta-pills">
+              <span class="product-meta-pill" data-product-sku>SKU CARE-101</span>
+              <span class="product-meta-pill" data-product-meta>Per Bottle / Low Stock</span>
+            </div>
+            <div class="trust-badge-row" data-product-trust-badges></div>
+            <p class="validation-note" data-product-checkout-rule hidden></p>
+            <div class="product-quantity-row">
+              <p class="field-label">Quantity</p>
+              <div class="product-quantity-stepper">
+                <button class="secondary-button quantity-step-button" type="button" data-qty-decrement>-</button>
+                <input class="input-shell-compact text-center" data-qty-input type="number" min="1" value="1" aria-label="Quantity" title="Quantity">
+                <button class="secondary-button quantity-step-button" type="button" data-qty-increment>+</button>
+              </div>
+            </div>
+            <div class="product-detail-actions">
+              <button class="primary-button" type="button" data-add-to-cart><span data-product-action-label>Add to Cart</span></button>
+              <a class="secondary-button" data-whatsapp-link data-product-whatsapp-link href="#"><span data-product-whatsapp-label>Order on WhatsApp</span></a>
+            </div>
+          </div>
+          <div class="card-surface product-detail-panel">
+            <p class="text-sm font-semibold" data-product-details-title>Trust and Usage</p>
+            <ul class="product-detail-list" data-product-details></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-partial="/src/shared/partials/whatsapp-cta.html"></div>
+    <div data-partial="/src/shared/partials/footer.html"></div>
+    <script type="module" src="/src/shared/scripts/pages/product.js"></script>
+  </body>
+</html>

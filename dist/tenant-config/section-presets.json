@@ -1,0 +1,6 @@
+{
+  "universal-minimal": ["hero", "categories", "featured-products", "trust-block", "whatsapp-cta"],
+  "tech-electronics": ["hero", "categories", "featured-products", "trust-block", "whatsapp-cta"],
+  "fashion-lifestyle": ["hero", "featured-products", "categories", "trust-block", "whatsapp-cta"],
+  "daily-essentials": ["hero", "categories", "featured-products", "trust-block", "whatsapp-cta"]
+}

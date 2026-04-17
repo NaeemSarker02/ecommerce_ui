@@ -1,0 +1,16 @@
+:root[data-theme="fashion-lifestyle"] {
+  --color-brand: #6d28d9;
+  --color-brand-strong: #4c1d95;
+  --color-accent: #f9a8d4;
+  --color-surface: #fffaf7;
+  --color-surface-elevated: #ffffff;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-border: #eaded7;
+  --color-footer-bg: #1f2937;
+  --color-footer-text: #f9fafb;
+  --color-footer-muted: #d1d5db;
+  --radius-card: 2rem;
+  --shadow-card: 0 24px 44px rgba(31, 41, 55, 0.08);
+  --section-gap: 5.5rem;
+}

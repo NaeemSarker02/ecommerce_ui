@@ -1,0 +1,103 @@
+{
+  "tenantId": "tenant-default",
+  "storeName": "Daniel's Shop",
+  "storeDescription": "A flexible storefront demo for mixed inventory businesses.",
+  "businessType": "general-retail",
+  "themeKey": "universal-minimal",
+  "logoUrl": "/images/logo-default.svg",
+  "faviconUrl": "/icons/favicon-default.svg",
+  "primaryColor": "#0f172a",
+  "secondaryColor": "#475569",
+  "accentColor": "#0ea5e9",
+  "contactPhone": "+8801913539767",
+  "contactEmail": "helloZed@hello.com",
+  "whatsappNumber": "8801303997358",
+  "address": "6/98 Glen Huntly Road",
+  "checkoutPreferences": {
+    "deliveryZones": [
+      { "value": "inside-dhaka", "label": "Inside Dhaka" },
+      { "value": "outside-dhaka", "label": "Outside Dhaka" },
+      { "value": "pickup", "label": "Store Pickup" }
+    ],
+    "paymentMethods": [
+      "Cash on Delivery",
+      "bKash",
+      "Nagad",
+      "Card on Delivery"
+    ],
+    "deliveryWindows": [
+      "10 AM - 1 PM",
+      "1 PM - 5 PM",
+      "5 PM - 9 PM"
+    ],
+    "guidance": {
+      "profileNote": "Save your preferred delivery timing and payment method once for repeat checkout.",
+      "cartNote": "Free delivery applies inside Dhaka on larger orders. Pick the right zone and delivery window before checkout.",
+      "checkoutHint": "The store will confirm delivery availability and exact timing on WhatsApp after reviewing the order."
+    },
+    "validationRules": {
+      "minimumOrderAmount": {
+        "value": 400,
+        "message": "Minimum order is BDT 400 for this storefront."
+      },
+      "paymentMethodRules": {
+        "Cash on Delivery": {
+          "blockedZones": [
+            "outside-dhaka"
+          ],
+          "minimumOrderAmount": 600,
+          "message": "Cash on Delivery is available for Inside Dhaka or Store Pickup orders from BDT 600.",
+          "zoneRequiredMessage": "Choose a delivery zone to confirm Cash on Delivery availability."
+        },
+        "Card on Delivery": {
+          "allowedZones": [
+            "inside-dhaka"
+          ],
+          "minimumOrderAmount": 1500,
+          "message": "Card on Delivery is only available inside Dhaka for orders from BDT 1,500.",
+          "zoneRequiredMessage": "Choose an inside-Dhaka delivery zone before using Card on Delivery."
+        }
+      }
+    }
+  },
+  "announcementBar": {
+    "id": "apr-weekly-offer",
+    "tone": "sale",
+    "badgeLabel": "Weekly Offer",
+    "text": "Free delivery over BDT 2,500 this week across selected categories.",
+    "linkLabel": "Shop the offer",
+    "linkHref": "./search.html",
+    "secondaryLinkLabel": "Browse categories",
+    "secondaryLinkHref": "./category.html",
+    "dismissible": true
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/thehellozed",
+    "instagram": "https://instagram.com/thehellozed",
+    "x": "https://x.com/thehellozed"
+  },
+  "homepageConfiguration": {
+    "showNewsletter": true,
+    "featuredCollection": "latest-products",
+    "featuredKicker": "Latest Products",
+    "featuredTitle": "Handpicked for your store visitors",
+    "newsletterKicker": "Store Updates",
+    "newsletterTitle": "Get new arrivals and weekly offers from Daniel's Shop.",
+    "newsletterDescription": "Save your email for store updates, curated picks, and campaign launches.",
+    "newsletterButtonLabel": "Join Updates",
+    "newsletterPlaceholder": "Email for store updates",
+    "sectionVisibility": {
+      "hero": true,
+      "categories": true,
+      "featured": true,
+      "newsletter": true,
+      "trust": true,
+      "support": true
+    }
+  },
+  "featureToggles": {
+    "showReviews": true,
+    "showWishlist": false,
+    "showQuickAdd": true
+  }
+}

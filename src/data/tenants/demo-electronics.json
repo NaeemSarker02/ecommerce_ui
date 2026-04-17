@@ -1,0 +1,103 @@
+{
+  "tenantId": "tenant-electronics",
+  "storeName": "Circuit Hub",
+  "storeDescription": "Spec-first electronics storefront demo.",
+  "businessType": "electronics",
+  "themeKey": "tech-electronics",
+  "logoUrl": "/images/logo-tech.svg",
+  "faviconUrl": "/icons/favicon-tech.svg",
+  "primaryColor": "#2563eb",
+  "secondaryColor": "#0f172a",
+  "accentColor": "#22d3ee",
+  "contactPhone": "+8801913539767",
+  "contactEmail": "support@circuithub.example",
+  "whatsappNumber": "8801303997358",
+  "address": "Dhaka Tech Plaza",
+  "checkoutPreferences": {
+    "deliveryZones": [
+      { "value": "inside-dhaka", "label": "Inside Dhaka Express" },
+      { "value": "nationwide", "label": "Nationwide Courier" },
+      { "value": "pickup", "label": "Store Pickup" }
+    ],
+    "paymentMethods": [
+      "Cash on Delivery",
+      "bKash",
+      "Bank Transfer",
+      "Card on Delivery"
+    ],
+    "deliveryWindows": [
+      "Same Day Express",
+      "Next Day Afternoon",
+      "Evening Delivery Slot"
+    ],
+    "guidance": {
+      "profileNote": "Save your preferred delivery slot and payment channel for faster device-order confirmation.",
+      "cartNote": "Express delivery is limited by zone. Bank transfer may be required for selected high-value electronics.",
+      "checkoutHint": "The store will verify stock, delivery speed, and payment method on WhatsApp before dispatch."
+    },
+    "validationRules": {
+      "minimumOrderAmount": {
+        "value": 1000,
+        "message": "Minimum order is BDT 1,000 for Circuit Hub."
+      },
+      "paymentMethodRules": {
+        "Cash on Delivery": {
+          "blockedZones": [
+            "nationwide"
+          ],
+          "minimumOrderAmount": 2000,
+          "message": "Cash on Delivery is only available for Inside Dhaka Express orders from BDT 2,000.",
+          "zoneRequiredMessage": "Choose a delivery zone to confirm whether Cash on Delivery is available for this order."
+        },
+        "Card on Delivery": {
+          "allowedZones": [
+            "inside-dhaka"
+          ],
+          "minimumOrderAmount": 5000,
+          "message": "Card on Delivery is limited to Inside Dhaka Express orders from BDT 5,000.",
+          "zoneRequiredMessage": "Choose Inside Dhaka Express before using Card on Delivery."
+        }
+      }
+    ]
+  },
+  "announcementBar": {
+    "id": "apr-tech-drop",
+    "tone": "info",
+    "badgeLabel": "New Drop",
+    "text": "New device drop: flagship electronics and accessories now in stock.",
+    "linkLabel": "View tech picks",
+    "linkHref": "./search.html",
+    "secondaryLinkLabel": "Category menu",
+    "secondaryLinkHref": "./category.html",
+    "dismissible": true
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/thehellozed",
+    "instagram": "https://instagram.com/thehellozed",
+    "x": "https://x.com/thehellozed"
+  },
+  "homepageConfiguration": {
+    "showNewsletter": true,
+    "featuredCollection": "tech-picks",
+    "featuredKicker": "Tech Picks",
+    "featuredTitle": "Performance-first products highlighted for faster conversion",
+    "newsletterKicker": "Launch Alerts",
+    "newsletterTitle": "Get device drops and deal alerts from Circuit Hub.",
+    "newsletterDescription": "Save your email for new stock notices, promo windows, and product launch updates.",
+    "newsletterButtonLabel": "Get Alerts",
+    "newsletterPlaceholder": "Email for launch alerts",
+    "sectionVisibility": {
+      "hero": true,
+      "categories": true,
+      "featured": true,
+      "newsletter": true,
+      "trust": true,
+      "support": true
+    }
+  },
+  "featureToggles": {
+    "showReviews": true,
+    "showWishlist": true,
+    "showQuickAdd": true
+  }
+}
