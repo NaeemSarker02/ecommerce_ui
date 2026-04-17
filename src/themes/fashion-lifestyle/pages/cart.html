@@ -13,14 +13,18 @@
     <div data-partial="/src/shared/partials/mobile-menu.html"></div>
     <main class="section-shell">
       <section class="page-container theme-page-intro">
-        <p class="section-kicker">Cart</p>
-        <h1 class="text-4xl font-semibold">Finalize Your Picks</h1>
-        <p class="text-muted max-w-2xl">Review your selected pieces, update quantities, and send a clean order request directly on WhatsApp.</p>
+        <div class="listing-intro-shell">
+          <div class="listing-intro-copy">
+            <p class="section-kicker">Cart</p>
+            <h1 class="text-4xl font-semibold">Finalize Your Picks</h1>
+            <p class="text-muted max-w-2xl">Review your selected pieces, update quantities, and send a clean order request directly on WhatsApp.</p>
+          </div>
+        </div>
       </section>
       <section class="page-container cart-shell">
-        <div class="card-surface p-6 md:p-7">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
+        <div class="cart-main-panel">
+          <div class="cart-panel-header">
+            <div class="cart-panel-copy">
               <p class="text-lg font-semibold">Saved Pieces</p>
               <p class="text-sm text-muted">Everything added from collection and product pages is gathered here before checkout.</p>
             </div>
@@ -29,7 +33,7 @@
           <div class="meta-divider my-5"></div>
           <div class="cart-items-stack" data-cart-items></div>
         </div>
-        <aside class="card-surface p-6 md:p-7">
+        <aside class="cart-summary-panel">
           <p class="section-kicker">Order Summary</p>
           <div class="cart-summary-stack mt-4">
             <div class="summary-row">
@@ -47,7 +51,7 @@
             <div class="cart-rule-list mt-3" data-cart-rule-list></div>
           </div>
           <div class="meta-divider my-5"></div>
-          <div class="field-stack" id="checkout-details">
+          <div class="cart-form-shell" id="checkout-details">
             <p class="text-sm font-semibold">Checkout Details</p>
             <div class="field-grid">
               <label class="field-stack">

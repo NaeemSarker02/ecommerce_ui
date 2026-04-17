@@ -656,6 +656,41 @@
     gap: 1.5rem;
   }
 
+  .cart-main-panel,
+  .cart-summary-panel {
+    display: grid;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.75rem;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 7%, transparent), transparent 52%),
+      color-mix(in srgb, var(--color-surface-elevated) 97%, transparent);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cart-panel-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cart-panel-copy {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .cart-form-shell {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.35rem;
+    background: color-mix(in srgb, var(--color-surface-elevated) 96%, transparent);
+  }
+
   .cart-items-stack {
     display: grid;
     gap: 1rem;
@@ -673,6 +708,8 @@
   .cart-item-media {
     width: 100%;
     max-width: 6.5rem;
+    border-radius: 1.1rem;
+    overflow: hidden;
   }
 
   .cart-item-content {
@@ -687,9 +724,17 @@
     gap: 0.75rem;
   }
 
+  .cart-item-actions .secondary-button {
+    min-width: 2.6rem;
+  }
+
   .cart-summary-stack {
     display: grid;
     gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    background: color-mix(in srgb, var(--color-surface-elevated) 98%, transparent);
   }
 
   .summary-row {
@@ -785,7 +830,9 @@
     height: 100dvh;
     padding: 1.25rem;
     border-left: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-surface-elevated) 96%, transparent);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 8%, transparent), transparent 45%),
+      color-mix(in srgb, var(--color-surface-elevated) 96%, transparent);
     color: var(--color-text);
     box-shadow: -24px 0 48px rgba(15, 23, 42, 0.18);
     overflow-y: auto;
@@ -796,6 +843,8 @@
     align-items: start;
     justify-content: space-between;
     gap: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .mini-cart-items {
@@ -810,8 +859,8 @@
     align-items: center;
     border: 1px solid var(--color-border);
     border-radius: 1.25rem;
-    padding: 0.75rem;
-    background: var(--color-surface-elevated);
+    padding: 0.85rem;
+    background: color-mix(in srgb, var(--color-surface-elevated) 98%, transparent);
   }
 
   .mini-cart-item-media {
@@ -879,7 +928,9 @@
     height: 100dvh;
     padding: 1.25rem;
     border-left: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-surface-elevated) 96%, transparent);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 7%, transparent), transparent 48%),
+      color-mix(in srgb, var(--color-surface-elevated) 96%, transparent);
     color: var(--color-text);
     box-shadow: -24px 0 48px rgba(15, 23, 42, 0.18);
     overflow-y: auto;
@@ -894,9 +945,9 @@
     display: grid;
     gap: 0.75rem;
     border: 1px solid var(--color-border);
-    border-radius: 1.25rem;
+    border-radius: 1.35rem;
     padding: 1rem;
-    background: var(--color-surface-elevated);
+    background: color-mix(in srgb, var(--color-surface-elevated) 98%, transparent);
   }
 
   .profile-panel-actions {
@@ -969,9 +1020,15 @@
     border-radius: var(--radius-card);
     padding: 1.5rem;
     background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 15%, transparent), transparent 42%),
       linear-gradient(135deg, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 10%, transparent), transparent),
       var(--color-surface-elevated);
     box-shadow: var(--shadow-card);
+  }
+
+  .newsletter-copy {
+    display: grid;
+    gap: 0.75rem;
   }
 
   .newsletter-form {
@@ -1041,10 +1098,51 @@
     gap: 1.5rem;
   }
 
+  .support-shell {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.85rem;
+    background:
+      radial-gradient(circle at top left, color-mix(in srgb, var(--tenant-accent-color, var(--color-accent)) 14%, transparent), transparent 38%),
+      color-mix(in srgb, var(--color-surface-elevated) 97%, transparent);
+    box-shadow: var(--shadow-card);
+  }
+
+  .support-contact-card {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    background: color-mix(in srgb, var(--color-surface-elevated) 98%, transparent);
+  }
+
+  .support-link-grid {
+    display: grid;
+    gap: 0.55rem;
+  }
+
   .footer-shell {
     border-top: 1px solid var(--color-border);
     background: var(--color-footer-bg);
     color: var(--color-footer-text);
+  }
+
+  .footer-top-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .footer-brand-block {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .footer-link-stack {
+    display: grid;
+    gap: 0.55rem;
   }
 
   .support-actions {
@@ -1450,6 +1548,16 @@
       padding: 1.2rem;
     }
 
+    .cart-main-panel,
+    .cart-summary-panel,
+    .support-shell {
+      padding: 1.45rem;
+    }
+
+    .footer-top-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .home-hero-foot {
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: end;
@@ -1477,6 +1585,17 @@
     .product-gallery-shell {
       position: sticky;
       top: 1.5rem;
+    }
+
+    .cart-summary-panel {
+      position: sticky;
+      top: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .footer-top-grid {
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
     }
   }
 }
