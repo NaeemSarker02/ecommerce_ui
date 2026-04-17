@@ -8,9 +8,10 @@
   display: grid;
   gap: 1.35rem;
   border: 1px solid var(--color-border);
-  border-radius: 1.8rem;
-  padding: 1.35rem 1rem;
+  border-radius: 1.95rem;
+  padding: 1.5rem 1.1rem;
   background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(255, 255, 255, 0.98));
+  box-shadow: var(--shadow-card);
 }
 
 .theme-section-grid {
@@ -70,7 +71,7 @@
 
 @media (min-width: 768px) {
   .theme-hero-shell {
-    padding-inline: 1.4rem;
+    padding-inline: 1.55rem;
   }
 
   .theme-section-grid {

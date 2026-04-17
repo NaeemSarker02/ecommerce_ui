@@ -233,11 +233,13 @@ function hydrateStoreLogo(tenant) {
 
   fallbacks.forEach((node) => {
     node.textContent = initials;
+    node.parentElement?.setAttribute("data-logo-state", "fallback");
   });
 
   logos.forEach((logo, index) => {
     if (!tenant.logoUrl) {
       logo.hidden = true;
+      logo.parentElement?.setAttribute("data-logo-state", "fallback");
       fallbacks[index]?.removeAttribute("hidden");
       return;
     }
@@ -248,11 +250,13 @@ function hydrateStoreLogo(tenant) {
 
     const onLoad = () => {
       logo.hidden = false;
+      logo.parentElement?.setAttribute("data-logo-state", "image");
       fallbacks[index]?.setAttribute("hidden", "hidden");
     };
 
     const onError = () => {
       logo.hidden = true;
+      logo.parentElement?.setAttribute("data-logo-state", "fallback");
       fallbacks[index]?.removeAttribute("hidden");
     };
 
